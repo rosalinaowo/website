@@ -63,8 +63,9 @@ a {
     image-rendering: crisp-edges;
     image-rendering: pixelated;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .vert-center {
@@ -97,6 +98,23 @@ a {
     display: flex;
     flex-direction: row;
     font-size: 1.3em;
+}
+
+.intro > img {
+    margin-right: 40px;
+}
+
+@media only screen and (max-width: 720px) {
+    li {
+        margin-left: -25px;
+    }
+    .intro {
+        flex-direction: column;
+    }
+    .intro > img {
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
 }
 
 .rainbow {
