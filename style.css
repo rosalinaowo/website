@@ -1,0 +1,131 @@
+@font-face {
+  font-family: round;
+  src: url("fonts/round.woff2");
+}
+
+:root {
+    --normal: round, sans-serif;
+    --monospace: monospace;
+    --serif: round, serif;
+    --black: #151515;
+    --white: #e8e3e3;
+    --orange: #e0863e;
+    --purple: #a988b0;
+}
+
+body {
+    font-size: 1.1em;
+    font-family: var(--normal);
+    background-color: var(--black);
+    color: var(--white);
+    text-align: justify;
+}
+
+pre {
+    font-family: var(--monospace);
+    padding: 0;
+    margin: 0;
+}
+
+code {
+    display: block;
+    font-family: var(--monospace);
+    overflow: auto;
+    background: #424242;
+    white-space: pre;
+    margin-bottom: 25px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--serif)
+}
+
+footer {
+    text-align: center;
+    margin: 1em 0 1em 0;
+}
+
+a { 
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.pfp {
+    width: 256px;
+    height: auto;
+}
+
+.purple {
+    color: var(--purple); 
+}
+
+.orange {
+    color: var(--orange);
+}
+
+.content {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    padding: 40px;
+    font-size: 1.3em;
+}
+
+.intro ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.rainbow {
+    animation: rainbow 4s infinite;
+}
+
+@media only screen and (max-width: 1050px) {
+    .content {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .intro {
+        padding: 0px;
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@keyframes rainbow {
+    0% {
+		color: red;
+	}
+
+	17% {
+		color: orange;
+	}
+
+	33% {
+		color: yellow;
+	}
+
+	50% {
+		color: green;
+	}
+
+	67% {
+		color: blue;
+	}
+
+	84% {
+		color: purple;
+	}
+
+	100% {
+		color: red;
+	}
+}
