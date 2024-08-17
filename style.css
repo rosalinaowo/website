@@ -63,9 +63,20 @@ a {
     image-rendering: crisp-edges;
     image-rendering: pixelated;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.buttons img {
+    max-width: 88px;
+    max-height: 31px;
+    height: auto;
+    object-fit: contain;
+}
+
+.button {
+    max-width: 88px;
+    height: auto;
 }
 
 .vert-center {
@@ -164,4 +175,30 @@ a {
 	100% {
 		color: red;
 	}
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline;
+    cursor: help;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    max-width: 400px;
+    width: 300px;
+    padding: 5px 0;
+    background-color: black;
+    text-align: center;
+    font-size: 0.7em;
+    border-radius: 6px;
+    position: absolute;
+    top: -8px;
+    left: 150%;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
