@@ -13,12 +13,17 @@
     --purple: #a988b0;
 }
 
+* {
+    text-align: start;
+}
+
 body {
     font-size: 1.1em;
     font-family: var(--normal);
     background-color: var(--black);
     color: var(--white);
     text-align: justify;
+    margin: 0 5% 0 5%;
 }
 
 pre {
@@ -42,11 +47,6 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
     text-align: center;
-}
-
-footer {
-    text-align: center;
-    margin: 1em 0 1em 0;
 }
 
 a { 
@@ -98,10 +98,70 @@ a {
     color: var(--orange);
 }
 
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.justify-content-center {
+    justify-content: center;
+    align-items: center;
+}
+
 .content {
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-bottom: 50px;
+    margin: 0 auto 50px auto;
+    max-width: 700px;
+}
+
+.links {
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+}
+
+.links a {
+    margin: 10px 0;
+}
+
+.links a::before {
+    content: ">>>";
+    position: absolute;
+    display: inline-block;
+    left: -40px;
+    transition: all 0.5s cubic-bezier(1, 2, 0, 1);
+    color: var(--black)
+}
+
+.links a::after {
+    content: "<<<";
+    position: absolute;
+    display: inline-block;
+    right: -40px;
+    transition: all 0.5s cubic-bezier(1, 2, 0, 1);
+    color: var(--black)
+}
+
+.links a:hover::before {
+    position: absolute;
+    display: inline-block;
+    left: -20px;
+    color: var(--white);
+}
+
+.links a:hover::after {
+    position: absolute;
+    display: inline-block;
+    right: -20px;
+    color: var(--white);
 }
 
 .intro {
@@ -115,12 +175,11 @@ a {
     margin-right: 40px;
 }
 
-@media only screen and (max-width: 720px) {
-    li {
-        margin-left: -25px;
-    }
+@media only screen and (max-width: 650px) {
     .intro {
         flex-direction: column;
+        padding: 0px;
+        grid-template-columns: 1fr;
     }
     .intro > img {
         margin-right: auto;
@@ -133,18 +192,7 @@ a {
 }
 
 @media only screen and (max-width: 1050px) {
-    .content {
-        margin-left: 3%;
-        margin-right: 3%;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .intro {
-        padding: 0px;
-        grid-template-columns: 1fr;
-    }
-
+    
 }
 
 @keyframes rainbow {
